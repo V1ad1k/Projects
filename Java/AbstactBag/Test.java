@@ -1,0 +1,61 @@
+package lab7;
+
+public class Test {
+	  public static void main(String[] args) {
+		   Product it = new Product(Products.BREAD, 2, 0.1);
+	        Product it2 = new Product(Products.TEA, 5, 0.1);
+	        Product it3 = new Product(Products.MILK, 4, 0.1);
+	        Product it4 = new Product(Products.OTHER, 3, 0.1);
+	        Product it5 = new Product(Products.MILK, 4, 0.1);
+	        Product it6 = new Product(Products.BUTTER, 3, 0.1);
+	        Product[] its = {it, it2, it3, it4, it5, it6};
+	        SmallBag small = new SmallBag();
+	        BigBag big = new BigBag();
+	        System.out.println("Empty bags:");
+	        System.out.println(small.toString());
+	        System.out.println(big.toString());
+	        System.out.println("Added stuff to small:");
+	        small.putIn(it);
+	        small.putIn(it2);
+	        small.putIn(it3);
+	        small.putIn(it4);
+	        small.putIn(it5);
+	        small.putIn(it6);
+	        System.out.println(small.toString());
+	        System.out.println("Array to small:");
+	        small.putIn(its);
+	        System.out.println(small.toString());
+	        System.out.println("Re-do array to small:");
+	        small.putIn(its);
+	        small.putIn(its);
+	        small.putIn(its);
+	        System.out.println(small.toString());
+	        System.out.println("Removing bread:");
+	        small.removeProduct(Products.BREAD);
+	        System.out.println(small.toString());
+	        System.out.println("Array + 2 x tea to big:");
+	        big.putIn(its);
+	        big.putIn(it2);
+	        big.putIn(it2);
+	        System.out.println(big.toString());
+	        System.out.println("Multiple arrays to big:");
+	        big.putIn(its);
+	        big.putIn(its);
+	        big.putIn(its);
+	        big.putIn(its);
+	        big.putIn(its);
+	        big.putIn(its);
+	        big.putIn(its);
+        big.putIn(its);
+	        big.putIn(its);
+	        System.out.println(big.toString());
+	        System.out.println("Total weight of tea:");
+	        System.out.println("Small: " + small.getTotalWeight(Products.TEA));
+	        System.out.println("Big: " + big.getTotalWeight(Products.TEA));
+	        System.out.println("\nChanging parameters:");
+	        small.setHasBelt(false);
+	        big.setHasRolls(true);
+	        System.out.println(small.toString());
+	        System.out.println(big.toString());
+	    }
+	}
